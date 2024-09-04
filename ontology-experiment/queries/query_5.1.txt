@@ -1,0 +1,20 @@
+PREFIX  talkings: <http://semantika.lt/ns/Talkings#>
+PREFIX  semLT: <http://semantika.lt/ns/SemLT#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  agents: <http://semantika.lt/ns/Agents#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?person ?substance ?date
+WHERE
+  { ?person talkings:talked__talking ?talking .
+    ?talking talkings:talked__substance ?substance .
+    ?talking talkings:has__talking_type talkings:confirmation_talking_type .
+	?talking talkings:has__talking_manner talkings:emotional_talking_manner .
+    ?person rdf:type agents:person .
+    ?person semLT:is_referred_in__document ?document .
+    ?substance semLT:is_referred_in__document ?document .
+    ?document semLT:created_date ?date .
+    ?person rdfs:label "Carl Cameron"
+  }
+  ORDER BY DESC(?date)
+  LIMIT 20

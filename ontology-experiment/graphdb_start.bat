@@ -1,0 +1,1 @@
+START "" "C:\Users\user\AppData\Local\GraphDB Desktop\GraphDB Desktop.exe"
