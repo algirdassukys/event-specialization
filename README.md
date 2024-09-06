@@ -22,10 +22,10 @@ To runs this software, a computer matching these minimum requirements is necessa
 
 Copy the contents of the archive to any directory on your computer. In _graphdb_start.bat_, specify _GraphDB.exe_ file path. In _graphdb_stop.bat_, specify path to Java folder and .exe file of the browser where GraphDB Workbench tool is running.
 
-Create 5 different instances of each repository kind (i.e. R1, R2, R3, and R4) to store ontologies of different sizes.
+Create 5 different instances of each specialization strategy (i.e. R1, R2, R3, and R4) to store ontologies of different sizes.
 The size of the ontology is determined by the number of individuals of class _Talking_: 2, 4, 6, 8, and 10 million.
 We used a naming convention where the type of repository is specified at the beginning, followed by the keyword talkings, and a number at the end that describes
-the size of the ontology in millions of individuals. For example, R1-talkings-2 denotes an R1 repository kind, containing 2 million of talking class individuals.
+the size of the ontology in millions of individuals. For example, R1-talkings-2 denotes an R1 specialization strategy, containing 2 million of talking class individuals.
 However, the naming convention can be used differently because the names of the repositories are passed to the program as parameters during the experiments.
 
 When creating a repository, it is important to choose the right ruleset. RDFS-Plus (Optimized) is used for R1, R3, R4, and OWL-Horst (Optimized) is used for R2.
@@ -43,7 +43,7 @@ The program is launched from the command line. The program works in the followin
 
 The program generates .zip files with ontology individuals to be imported into the appropriate repositories using the GraphDB Workbench tool. The generation program allows to choose how many instances to generate. To avoid very large files, the generated data is segmented by placing at most 100,000 individuals of talking class in a single .zip file.
 
-Example of running the program when 5,000 instances are generated for an R1 repository kind:
+Example of running the program when 5,000 instances are generated for an R1 specialization strategy:
 
 ```bash
 java -jar ont-expt.jar generate R1 5000
